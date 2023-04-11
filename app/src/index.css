@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Schibsted Grotesk', sans-serif;
+    color: #fff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #353641;
+  /* font-family: 'Schibsted Grotesk', sans-serif; */
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.wrapper div {
+  vertical-align: initial;
+}
