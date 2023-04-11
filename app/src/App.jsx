@@ -5,7 +5,6 @@ function App() {
 
   const [prompt, setPrompt] = useState("")
   const [typing, setTyping] = useState(false)
-  const [current,setCurrent] = useState("now")
   const [messages, setMessages] = useState([
     {
       message: "Hello, I'm ChatGPT! Ask me anything!",
@@ -13,6 +12,7 @@ function App() {
       sender: "ChatGPT"
     }
   ]);
+  const [current,setCurrent] = useState("now")
 
   const chatGPTSystemMethod = {
     role: "system", content: "You are a helpful assistant."
@@ -31,7 +31,6 @@ function App() {
     setTyping(true)
     setPrompt("")
     setCurrent(new Date().getMilliseconds())
-    // fetchApi()
   }
 
   const fetchApi = async () => {
@@ -87,7 +86,7 @@ function App() {
 
           {messages && messages.length > 0 && messages.map((message,index)=> (
             <React.Fragment key={index}>
-              <div className="flex">
+              <div className="flex px-3">
                 <div className={`container mx-auto flex items-center ${message.sender === "ChatGPT" ? "flex-row" : "flex-row-reverse"}`}>
                   
                   {message.sender === "ChatGPT" 
