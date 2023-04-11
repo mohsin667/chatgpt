@@ -25,15 +25,14 @@ function App() {
 
   const queryPrompt = () => {
     if(prompt !== "")  {
+      setMessages(previousState => [...previousState, {message: prompt, sender: "user"}])
+      setTyping(true)
+      setPrompt("")
+      setCurrent(new Date().getMilliseconds())
     }
-    setMessages(previousState => [...previousState, {message: prompt, sender: "user"}])
-    setTyping(true)
-    setPrompt("")
-    setCurrent(new Date().getMilliseconds())
   }
 
   const fetchApi = async () => {
-    console.log()
     let chatRoles = messages.map((messageObject) => {
       let role = "";
       if (messageObject.sender === "ChatGPT") {
